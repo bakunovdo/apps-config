@@ -17,6 +17,8 @@
 	cam = commit --amend -m
 	save = !git add -A && git commit -m 'chore: commit save point'
 
+  puo = push -u origin
+
 	d = diff
 	ds = diff --stat
 

@@ -1,0 +1,33 @@
+[user]
+	email = bakunov.do@gmail.com
+	name = bakunov
+[core]
+	longpaths = true
+	autocrlf = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[alias]
+	l = !git log --pretty=format:\"%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+	bl = branch --format=\"%(HEAD) %(color:cyan)%(refname:short)%(color:reset) - %(contents:subject)%(color:green) (%(committerdate:relative)) %(color:cyan)[%(authorname)]\" --sort=-committerdate
+
+	c = commit -m
+	cam = commit --amend -m
+	save = !git add -A && git commit -m 'chore: commit save point'
+
+	d = diff
+	ds = diff --stat
+
+	s = status -s
+	co = checkout
+	cob = checkout -b
+
+
+	undo = reset HEAD~1 --mixed
+	reser = !git reset --hard
+
+
+[commit]
+	verbose = true
